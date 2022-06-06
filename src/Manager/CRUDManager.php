@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace CarlosChininin\AppBundle\Manager;
 
-use CarlosChininin\AppBundle\Doctrine\Pagination\DoctrinePagination;
 use CarlosChininin\AppBundle\Repository\RepositoryInterface;
 use CarlosChininin\AppUtil\Http\ParamFetcher;
 use CarlosChininin\AppUtil\Pagination\PaginatedData;
