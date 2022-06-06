@@ -1,0 +1,33 @@
+{
+    "name": "carloschininin/app-bundle",
+    "description": "App template code base",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carlos Chininin",
+            "email": "carloschininin@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "ext-mbstring": "*",
+        "carloschininin/app-util": "dev-main",
+        "doctrine/dbal": "^3.3",
+        "doctrine/doctrine-bundle": "^2.6",
+        "doctrine/orm": "^2.10",
+        "symfony/framework-bundle": "^6.1",
+        "symfony/http-foundation": "^6.1",
+        "symfony/http-kernel": "^6.1",
+        "webmozart/assert": "^1.11"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "CarlosChininin\\AppBundle\\": "src/"
+        }
+    }
+}
