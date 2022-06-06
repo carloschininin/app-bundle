@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace CarlosChininin\AppBundle\Manager;
 
 use CarlosChininin\AppBundle\Entity\EntityInterface;
-use CarlosChininin\AppBundle\Repository\RepositoryInterface;
+use CarlosChininin\AppBundle\Repository\AbstractRepository;
 use CarlosChininin\AppUtil\Http\ParamFetcher;
 
 class BaseManager extends AbstractManager
 {
     public function __construct(
-        protected readonly RepositoryInterface $repository,
+        protected readonly AbstractRepository $repository,
     ) {
     }
 
