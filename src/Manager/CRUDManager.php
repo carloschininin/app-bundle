@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace CarlosChininin\AppBundle\Manager;
 
-use CarlosChininin\AppBundle\Repository\RepositoryInterface;
+use CarlosChininin\AppBundle\Repository\AbstractRepository;
 use CarlosChininin\AppUtil\Http\ParamFetcher;
 use CarlosChininin\AppUtil\Pagination\PaginatedData;
 use CarlosChininin\AppUtil\Pagination\PaginationDto;
@@ -19,7 +19,7 @@ class CRUDManager extends BaseManager
 {
     public function __construct(
         protected readonly PaginationInterface $pagination,
-        RepositoryInterface $repository,
+        AbstractRepository $repository,
     ) {
         parent::__construct($repository);
     }

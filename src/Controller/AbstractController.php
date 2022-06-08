@@ -11,20 +11,16 @@ namespace CarlosChininin\AppBundle\Controller;
 
 use CarlosChininin\AppUtil\Message\MessageDto;
 use CarlosChininin\AppUtil\Message\MessageType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as SymfonyAbstractController;
 
-abstract class AbstractController extends SymfonyAbstractController
+abstract class AbstractController implements ControllerInterface
 {
     /** @param MessageDto[] $messages */
-    protected function addFlashMessages(array $messages): void
+    public function addFlashMessages(array $messages): void
     {
         foreach ($messages as $message) {
             $this->addFlashMessage($message->message(), $message->type());
         }
     }
 
-    protected function addFlashMessage(string $message, MessageType $type = MessageType::SUCCESS): void
-    {
-        $this->addFlash($type->value, $message);
-    }
+    abstract public function addFlashMessage(string $message, MessageType $type = MessageType::SUCCESS): void;
 }

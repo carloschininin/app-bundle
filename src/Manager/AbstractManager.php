@@ -21,17 +21,12 @@ abstract class AbstractManager
         $this->errors[] = $error;
     }
 
-    public function addErrors(array $errors): void
-    {
-        /** @var ErrorDto[] $errors */
-        foreach ($errors as $error) {
-            $this->addError($error);
-        }
-    }
-
     /** @return ErrorDto[] */
     public function errors(): array
     {
-        return $this->errors;
+        $errors = $this->errors;
+        unset($this->errors);
+
+        return $errors;
     }
 }

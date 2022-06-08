@@ -11,7 +11,6 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Tools\Pagination\CountWalker;
 use Doctrine\ORM\Tools\Pagination\Paginator as DoctrineOrmPaginator;
 use Exception;
-use RuntimeException;
 
 class DoctrinePagination implements PaginationInterface
 {

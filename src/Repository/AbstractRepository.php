@@ -11,10 +11,9 @@ namespace CarlosChininin\AppBundle\Repository;
 
 use CarlosChininin\AppBundle\Entity\EntityInterface;
 use CarlosChininin\AppUtil\Http\ParamFetcher;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 
-abstract class AbstractRepository extends ServiceEntityRepository implements RepositoryInterface
+abstract class AbstractRepository implements RepositoryInterface
 {
     /** @return EntityInterface[]|array */
     public function filter(ParamFetcher $params, bool $inArray = false, array $options = []): array
@@ -30,22 +29,6 @@ abstract class AbstractRepository extends ServiceEntityRepository implements Rep
         $queryBuilder = $this->allQuery()->getQuery();
 
         return true === $inArray ? $queryBuilder->getArrayResult() : $queryBuilder->getResult();
-    }
-
-    public function save(EntityInterface $entity, bool $flush = true): void
-    {
-        $this->_em->persist($entity);
-        if ($flush) {
-            $this->_em->flush();
-        }
-    }
-
-    public function remove(EntityInterface $entity, bool $flush = true): void
-    {
-        $this->_em->remove($entity);
-        if ($flush) {
-            $this->_em->flush();
-        }
     }
 
     abstract public function filterQuery(ParamFetcher $params, array $options = []): QueryBuilder;

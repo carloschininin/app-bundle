@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace CarlosChininin\AppBundle\Doctrine\Pagination;
 
-final class DoctrinePaginationException extends \RuntimeException
+use RuntimeException;
+
+final class DoctrinePaginationException extends RuntimeException
 {
 }
